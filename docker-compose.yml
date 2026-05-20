@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      args:
+        - VITE_API_URL=http://localhost:3000 # URL da sua API Nest
+    container_name: react_frontend_nest_prisma
+    ports:
+      - "8080:80" # Você acessará em http://localhost:8080
+    restart: always
